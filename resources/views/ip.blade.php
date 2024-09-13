@@ -13,8 +13,8 @@
         </div>
         </section>
         <!-- End Breadcrumbs -->
-        
-<div class="row">
+
+<div class="container">
     <div class="col-12">
         <!-- Tabel Anda -->
         <div class="card">
@@ -24,23 +24,26 @@
                 </marquee>
             </div>
             <div class="card-body">
-                
+
         <!-- Formulir Pencarian Tanggal -->
         <form id="dateSearchForm">
-            <div class="d-flex form-row align-items-center">
-                <div class="col-md-3">
-                    <label for="startDate">Tanggal Mulai:</label>
-                    <input type="date" id="startDate" class="form-control">
+
+
+                <div class="d-flex form-row align-items-center">
+                    <div class="col-md-3"style = "margin-right: 10px">
+                        <label for="startDate">Tanggal Mulai:</label>
+                        <input type="date" id="startDate" class="form-control" ;>
+                    </div>
+                    <div class="col-md-3"style = "margin-right: 10px">
+                        <label for="endDate">Tanggal Selesai:</label>
+                        <input type="date" id="endDate" class="form-control">
+                    </div>
+                    <div class="col-md-3" style="margin-left: 5; margin-top: 5px;">
+                        <button type="button" class="btn btn-primary" onclick="searchByDate()">Cari</button>
+                        <button type="reset" class="btn btn-secondary" id="reset">Reset Waktu</button>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <label for="endDate">Tanggal Selesai:</label>
-                    <input type="date" id="endDate" class="form-control">
-                </div> 
-                <div class="col-md-3" style="margin-left: 5;">
-                    <button type="button" class="btn btn-primary" onclick="searchByDate()">Cari</button>
-                    <button type="reset" class="btn btn-secondary" id="reset">Reset Waktu</button>
-                </div>
-            </div>
+
         </form>
         <p>
         <button id="toggleScrollButton" class="btn btn-primary">
@@ -210,7 +213,7 @@
         // Mengosongkan isi tabel
         var table = document.querySelector(".table tbody");
         var rows = table.querySelectorAll("tr");
-        
+
         rows.forEach(function(row) {
             row.style.display = ""; // Mengembalikan semua baris yang mungkin telah disembunyikan
         });

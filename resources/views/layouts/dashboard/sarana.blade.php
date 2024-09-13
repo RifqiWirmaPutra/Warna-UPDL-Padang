@@ -37,12 +37,13 @@
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
           <div class="portfolio-wrap">
             <img src="{{ asset('storage/' . str_replace('public/', '', $sarana->foto)) }}"
+            style="width: 100%; height: 230px; object-fit: cover;"
             class="img-fluid equal-height" alt="{{ $sarana->judul }}">
             <div class="portfolio-info">
               <h4>{{ $sarana->judul }}</h4>
               <p>{{ $sarana->keterangan }}</p>
               <div class="portfolio-links">
-                <a href="{{ asset('storage/' . str_replace('public/', '', $sarana->foto)) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ $sarana->judul }}"><i class="bx bx-plus"></i></a>
+                <a href="{{ asset('storage/' . str_replace('public/', '', $sarana->foto)) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ $sarana->judul }}"><i class="bi bi-eye-fill"></i></a>
                 <!-- <a href="#" title="Lihat Selengkapnya"><i class="bx bx-link"></i></a> -->
               </div>
             </div>

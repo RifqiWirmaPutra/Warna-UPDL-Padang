@@ -21,7 +21,7 @@
           </div>
 
           <!-- Slide 2 -->
-          <div class="carousel-item" style="background-image: url({{ asset('landing_page/img/slide2/2.png')}})">
+          <div class="carousel-item" style="background-image: url({{ asset('landing_page/img/slide2/4.png')}})">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated fanimate__adeInDown">PLN UPDL<span> PADANG</span></h2>
@@ -86,18 +86,21 @@
             </div>
           </div>
 
-          
-          <!-- <div class="col-lg-3 mt-4 mt-lg-0">
-            <div class="icon-box">
-            <a href="{{route('soon.index')}}">
-              <img src="{{asset('assets/images/3.png')}}" alt="Icon 2" class="img-fluid mb-3" style="max-width: 60px;">
-              <h3 class="text-dark">Check-in Penginapan</h3>
-              <p>Check-in Penginapan Disini</p>
-              </a>
-            </div>
-          </div> -->
 
           <div class="col-lg-3 mt-4 mt-lg-0">
+            <div class="icon-box">
+            <a href="{{route('jasa_layanan.index')}}">
+              <img src="{{asset('assets/images/3.png')}}" alt="Icon 2" class="img-fluid mb-3" style="max-width: 60px;">
+              <h3 class="text-dark">Jasa & Layanan</h3>
+              <p>Lihat Jasa & Layanan Kami Disini</p>
+              </a>
+            </div>
+          </div>
+
+
+
+        {{--
+        <div class="col-lg-3 mt-4 mt-lg-0">
           <div class="icon-box">
             <a href="{{route('soon.index')}}" class="disable-click" onclick="return false;">
               <img src="{{asset('assets/images/3.png')}}" alt="Icon 2" class="img-fluid mb-3" style="max-width: 60px;">
@@ -105,12 +108,14 @@
               <h1 style="font-size: 35px; color: #000000; font-weight: bold;">Coming Soon!</h1>
             </a>
           </div>
-        </div>
+        </div> --}} {{-- Boleh dihapus atau ngk --}}
+
+
 
           <div class="col-lg-3 mt-4 mt-lg-0">
             <div class="icon-box">
             <a href="{{route('sarana.index')}}">
-            <!-- <a href="{{route('soon.index')}}"> -->
+           {{-- <!-- <a href="{{route('soon.index')}}"> --> --}}
               <!-- <i class="bi bi-binoculars"></i> -->
               <img src="{{asset('assets/images/4.png')}}" alt="Icon 3" class="img-fluid mb-3" style="max-width: 60px;">
               <h3 class="text-dark">Sarana dan Prasarana</h3>
@@ -129,7 +134,7 @@
               </a>
             </div>
           </div>
-          
+
         </div>
 
       </div>
@@ -251,4 +256,3 @@
   </main><!-- End #main -->
 
     @endsection
-    

@@ -16,7 +16,11 @@
       </div>
     </section><!-- End Breadcrumbs -->
 
+
+
     <!-- ======= Blog Section ======= -->
+
+    {{-- 
     <section id="blog" class="blog">
       <div class="container" data-aos="fade-up">
 
@@ -237,6 +241,19 @@
 
       </div>
     </section><!-- End Blog Section -->
+    comment 
+    --}} {{-- Boleh hapus atau ngk --}}
+
+
+
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <div class="section-title">
+          <h2>Info Komunitas Kami</h2>
+          <p>Temukan Rincian Kegiatan Komunitas Terbaru Kami</p>
+        </div>
+      </div>
+    </section>
 
   </main><!-- End #main -->
 

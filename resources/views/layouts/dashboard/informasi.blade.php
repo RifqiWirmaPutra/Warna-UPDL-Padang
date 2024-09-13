@@ -22,18 +22,18 @@
         <p>Temukan Rincian Kegiatan Terbaru Kami</p>
       </div>
       <div class="row portfolio-container">
-        @foreach($informasis as $informasi)
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="{{ asset('storage/' . str_replace('public/', '', $informasi->foto)) }}"
-            class="img-fluid equal-height" alt="{{ $informasi->judul }}">
-            <div class="portfolio-info">
-              <h4>{{ $informasi->judul }}</h4>
-              <!-- <p>{{ $informasi->keterangan }}</p> -->
-              <div class="portfolio-links">
-                <a href="{{ asset('storage/' . str_replace('public/', '', $informasi->foto)) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ $informasi->judul }}"><i class="bx bx-plus"></i></a>
-                <a href="{{ route('informasi-details.show', ['id' => $informasi->id]) }}" title="Lihat Selengkapnya"><i class="bx bx-link"></i></a>
-              </div>
+  @foreach($informasis as $informasi)
+    <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="margin-bottom: 50px;">
+      <div class="portfolio-wrap" style="position: relative; overflow: hidden;">
+        <img src="{{ asset('storage/' . str_replace('public/', '', $informasi->foto)) }}"
+        style="width: 100%; height: 230px; object-fit: cover;" alt="{{ $informasi->judul }}">
+        <div class="portfolio-info" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.6); color: #fff; padding: 10px; text-align: center;">
+          <h4>{{ $informasi->judul }}</h4>
+          <!-- <p>{{ $informasi->keterangan }}</p> -->
+          <div class="portfolio-links">
+            <a href="{{ asset('storage/' . str_replace('public/', '', $informasi->foto)) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ $informasi->judul }}" style="color: #fff; margin-right: 5px;"><i class="bi bi-eye-fill"></i></i></a>
+            <a href="{{ route('informasi-details.show', ['id' => $informasi->id]) }}" title="Lihat Selengkapnya" style="color: #fff;"><i class="bi bi-bookmarks-fill"></i></i></a>
+          </div>
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@
   <!-- ======= Clients Section ======= -->
   <section id="clients" class="clients">
     <div class="container">
-      
+
     </div>
   </section>
   <!-- End Clients Section -->
