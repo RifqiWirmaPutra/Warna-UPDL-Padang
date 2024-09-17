@@ -23,6 +23,8 @@
             font-weight: bold;
         }
 
+
+
         /* Styling untuk Ruangan */
         .room-card {
             display: flex;
@@ -34,19 +36,59 @@
             background-color: #fff;
             margin: 20px 0;
             gap: 20px;
-        }
-
-        .room-image {
-            width: 25%;
+            position: relative;
         }
 
         .room-image img {
             width: 100%;
-            height: auto;
+            /* Menjaga gambar memenuhi kontainer */
+            height: 140px;
+            /* Menetapkan tinggi gambar tetap */
             object-fit: cover;
+            /* Mengatur agar gambar menyesuaikan tanpa merusak rasio aspek */
             border-radius: 10px;
         }
 
+        .room-image {
+            width: 25%;
+            position: relative;
+        }
+
+        /* .room-image img {
+                            width: 100%;
+                            height: auto;
+                            object-fit: cover;
+                            border-radius: 10px;
+                        } */
+
+        /* Arrow buttons inside the image */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            /* Ukuran panah lebih kecil */
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            /* Padding lebih kecil */
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .arrow.left {
+            left: 10px;
+            scale:
+                /* Position on the left inside the image */
+        }
+
+        .arrow.right {
+            right: 10px;
+            /* Position on the right inside the image */
+        }
+
+        /* Styling untuk Informasi Ruangan */
         .room-info {
             text-align: left;
             padding: 10px 0;
@@ -145,21 +187,26 @@
         <!-- Room Card 1 -->
         <div class="room-card">
             <div class="room-image">
-                <h3 class="tipeRuangan" style="padding: 5px">Family Room</h3>
-                <img src="/penginapan/images/data-updl/updl padang/front.jpg" alt="Family Room">
+                <h3 class="tipeRuangan" style="padding: 10px">Family Room</h3>
+                <img id="carousel-image" src="/penginapan/images/DATA_HOTEL/axana.jpg" alt="Family Room">
+
+                <!-- Arrow Left -->
+                <div class="arrow left" onclick="prevImage()">&#10094;</div>
+                <!-- Arrow Right -->
+                <div class="arrow right" onclick="nextImage()">&#10095;</div>
             </div>
             <div class="room-info">
                 <table>
                     <tr>
                         <td>
-                            <div class>Pilihan Kamar</div>
+                            <div>Pilihan Kamar</div>
                             <div class="button-group">
-                                <div class="button">Daily PLN Group</div>
-                                <div class="button">Monthly PLN Group</div>
+                                <div class="button" onclick="changePrice(250000)">Daily PLN Group</div>
+                                <div class="button" onclick="changePrice(3400000)">Monthly PLN Group</div>
                             </div>
                             <div class="button-group">
-                                <div class="button">Daily Non PLN Group</div>
-                                <div class="button">Monthly Non PLN Group</div>
+                                <div class="button" onclick="changePrice(350000)">Daily Non PLN Group</div>
+                                <div class="button" onclick="changePrice(3800000)">Monthly Non PLN Group</div>
                             </div>
                         </td>
                         <td class="room-price">
@@ -172,10 +219,28 @@
                 </table>
             </div>
         </div>
-
     </div>
 
     <script>
+        // Daftar gambar untuk carousel
+        const images = [
+            "/penginapan/images/DATA_HOTEL/axana.jpg",
+            "/penginapan/images/DATA_HOTEL/basko.jpg",
+            "/penginapan/images/DATA_HOTEL/favehotel.jpg",
+        ];
+
+        let currentIndex = 0;
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById('carousel-image').src = images[currentIndex];
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            document.getElementById('carousel-image').src = images[currentIndex];
+        }
+
         function changePrice(price) {
             document.getElementById('price').innerHTML = price.toLocaleString('id-ID');
         }
