@@ -23,7 +23,13 @@
             font-weight: bold;
         }
 
-
+        /* Styling Tipe Ruangan */
+        .tipeRuangan {
+            border-radius: 5px;
+            font-size: 22px;
+            font-weight: bold;
+            /* Ukuran font diperkecil */
+        }
 
         /* Styling untuk Ruangan */
         .room-card {
@@ -42,8 +48,10 @@
         .room-image img {
             width: 100%;
             /* Menjaga gambar memenuhi kontainer */
-            height: 140px;
+            height: 160px;
             /* Menetapkan tinggi gambar tetap */
+            /* width: 150px; */
+            /* Menetapkan lebar gambar tetap */
             object-fit: cover;
             /* Mengatur agar gambar menyesuaikan tanpa merusak rasio aspek */
             border-radius: 10px;
@@ -54,14 +62,6 @@
             position: relative;
         }
 
-        /* .room-image img {
-                            width: 100%;
-                            height: auto;
-                            object-fit: cover;
-                            border-radius: 10px;
-                        } */
-
-        /* Arrow buttons inside the image */
         .arrow {
             position: absolute;
             top: 50%;
@@ -79,8 +79,8 @@
 
         .arrow.left {
             left: 10px;
-            scale:
-                /* Position on the left inside the image */
+            position: center;
+            /* Position on the left inside the image */
         }
 
         .arrow.right {
@@ -91,7 +91,15 @@
         /* Styling untuk Informasi Ruangan */
         .room-info {
             text-align: left;
-            padding: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            /* Border untuk room-info */
+            border-radius: 10px;
+            /* Rounded corners */
+            background-color: #f9f9f9;
+            /* Background color for better visibility */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Optional shadow for better separation */
         }
 
         .room-info h3 {
@@ -102,10 +110,19 @@
 
         .table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 0px;
             margin: 20px;
             font-family: Arial, sans-serif;
             gap: 20px;
+            border: 1px solid #ccc;
+            /* Border untuk room-info */
+            border-radius: 10px;
+            /* Rounded corners */
+            background-color: #f9f9f9;
+            /* Background color for better visibility */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Optional shadow for better separation */
         }
 
         td {
@@ -198,8 +215,8 @@
             <div class="room-info">
                 <table>
                     <tr>
+                        <div style="font-weight: bold">Pilihan Kamar</div>
                         <td>
-                            <div>Pilihan Kamar</div>
                             <div class="button-group">
                                 <div class="button" onclick="changePrice(250000)">Daily PLN Group</div>
                                 <div class="button" onclick="changePrice(3400000)">Monthly PLN Group</div>

@@ -23,6 +23,13 @@
             font-weight: bold;
         }
 
+        .tipeRuangan {
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            /* Ukuran font diperkecil */
+        }
+
         /* Styling untuk Ruangan */
         .room-card {
             display: flex;
@@ -34,22 +41,64 @@
             background-color: #fff;
             margin: 20px 0;
             gap: 20px;
-        }
-
-        .room-image {
-            width: 25%;
+            position: relative;
         }
 
         .room-image img {
             width: 100%;
-            height: auto;
+            /* Menjaga gambar memenuhi kontainer */
+            height: 140px;
+            /* Menetapkan tinggi gambar tetap */
             object-fit: cover;
+            /* Mengatur agar gambar menyesuaikan tanpa merusak rasio aspek */
             border-radius: 10px;
         }
 
+        .room-image {
+            width: 25%;
+            position: relative;
+        }
+
+
+        /* Arrow buttons inside the image */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            /* Ukuran panah lebih kecil */
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            /* Padding lebih kecil */
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .arrow.left {
+            left: 10px;
+            scale:
+                /* Position on the left inside the image */
+        }
+
+        .arrow.right {
+            right: 10px;
+            /* Position on the right inside the image */
+        }
+
+        /* Styling untuk Informasi Ruangan */
         .room-info {
             text-align: left;
-            padding: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            /* Border untuk room-info */
+            border-radius: 10px;
+            /* Rounded corners */
+            background-color: #f9f9f9;
+            /* Background color for better visibility */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Optional shadow for better separation */
         }
 
         .room-info h3 {
@@ -60,10 +109,19 @@
 
         .table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 0px;
             margin: 20px;
             font-family: Arial, sans-serif;
             gap: 20px;
+            border: 1px solid #ccc;
+            /* Border untuk room-info */
+            border-radius: 10px;
+            /* Rounded corners */
+            background-color: #f9f9f9;
+            /* Background color for better visibility */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Optional shadow for better separation */
         }
 
         td {
@@ -145,37 +203,59 @@
         <!-- Room Card 1 -->
         <div class="room-card">
             <div class="room-image">
-                <h3 class="tipeRuangan" style="padding: 5px">Family Room</h3>
-                <img src="/penginapan/images/data-updl/updl padang/front.jpg" alt="Family Room">
+                <div class="tipeRuangan" style="padding-block: 10px">Family Room</div>
+                <img id="carousel-image" src="/penginapan/images/DATA_HOTEL/axana.jpg" alt="Family Room">
+
+                <!-- Arrow Left -->
+                <div class="arrow left" onclick="prevImage()">&#10094;</div>
+                <!-- Arrow Right -->
+                <div class="arrow right" onclick="nextImage()">&#10095;</div>
             </div>
             <div class="room-info">
                 <table>
-                    <tr>
-                        <td>
-                            <div class>Pilihan Kamar</div>
-                            <div class="button-group">
-                                <div class="button">Daily PLN Group</div>
-                                <div class="button">Monthly PLN Group</div>
-                            </div>
-                            <div class="button-group">
-                                <div class="button">Daily Non PLN Group</div>
-                                <div class="button">Monthly Non PLN Group</div>
-                            </div>
-                        </td>
-                        <td class="room-price">
-                            <div>
-                                <span class="price">Rp <span id="price">250.000</span></span>
-                            </div>
-                            <button class="price-button">Pilih</button>
-                        </td>
+                    <div style="padding: 5px; font-weight: bold">Pilihan Kamar</div>
+                    <td>
+                        <div class="button-group">
+                            <div class="button" onclick="changePrice(250000)">Daily PLN Group</div>
+                            <div class="button" onclick="changePrice(3400000)">Monthly PLN Group</div>
+                        </div>
+                        <div class="button-group">
+                            <div class="button" onclick="changePrice(350000)">Daily Non PLN Group</div>
+                            <div class="button" onclick="changePrice(3800000)">Monthly Non PLN Group</div>
+                        </div>
+                    </td>
+                    <td class="room-price">
+                        <div>
+                            <span class="price">Rp <span id="price">250.000</span></span>
+                        </div>
+                        <button class="price-button">Pilih</button>
+                    </td>
                     </tr>
                 </table>
             </div>
         </div>
-
     </div>
 
     <script>
+        // Daftar gambar untuk carousel
+        const images = [
+            "/penginapan/images/DATA_HOTEL/axana.jpg",
+            "/penginapan/images/DATA_HOTEL/basko.jpg",
+            "/penginapan/images/DATA_HOTEL/favehotel.jpg",
+        ];
+
+        let currentIndex = 0;
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById('carousel-image').src = images[currentIndex];
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            document.getElementById('carousel-image').src = images[currentIndex];
+        }
+
         function changePrice(price) {
             document.getElementById('price').innerHTML = price.toLocaleString('id-ID');
         }
