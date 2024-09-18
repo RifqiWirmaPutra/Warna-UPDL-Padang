@@ -44,8 +44,7 @@ use App\Http\Controllers\CheckInController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\ArsipUserController;
-
-
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\KulinerController;
 use App\Http\Controllers\KwtController;
 use App\Http\Controllers\DashboardKulinerController;
@@ -58,6 +57,8 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FedbackAdminController;
 use App\Http\Controllers\DashboardBookingController;
 use App\Http\Controllers\Jdl\PenginapanController;
+use App\Http\Controllers\PeBookingController;
+use App\Http\Controllers\PeBookingController as ControllersPeBookingController;
 use App\Http\Controllers\PenginapanDashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -337,6 +338,11 @@ Route::get('/penginapan/semarang', [PenginapanController::class, 'semarang'])->n
 Route::get('/penginapan/pandaan', [PenginapanController::class, 'pandaan'])->name('penginapan.pandaan');
 Route::get('/penginapan/bogor', [PenginapanController::class, 'bogor'])->name('penginapan.bogor');
 
+// booking
+Route::get('/booking/booking', [PeBookingController::class, 'booking'])->name('booking.penginapan');
+Route::get('/booking/create', [PeBookingController::class, 'create'])->name('booking.create');
+Route::post('/booking/store', [PeBookingController::class, 'store'])->name('booking.store');
+Route::get('/booking/success', [PeBookingController::class, 'success'])->name('booking.success');
 
 // wisata
 Route::get('/kulinerwisatadantransportasi/wisata', [WisataController::class, 'index'])->name('wisata');

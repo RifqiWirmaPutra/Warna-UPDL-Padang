@@ -9,12 +9,14 @@ class BookingPe extends Model
 {
     use HasFactory;
 
+    protected $table = 'pe_bookings';
+
     protected $fillable = [
         'tanggalMasuk',
         'tanggalKeluar',
         'email',
-        'email_verified_at',
         'noHP',
         'uploadKTP',
+        'nip',
     ];
 }

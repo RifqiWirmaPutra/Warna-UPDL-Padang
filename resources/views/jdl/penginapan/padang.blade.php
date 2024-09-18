@@ -230,7 +230,11 @@
                             <div>
                                 <span class="price">Rp <span id="price">250.000</span></span>
                             </div>
-                            <button class="price-button">Pilih</button>
+                            <a href="{{ route('booking.penginapan') }}">
+                                <div id="button-container-booking" class="button-container">
+                                    <button class="price-button">Pilih</button>
+                                </div>
+                            </a>
                         </td>
                     </tr>
                 </table>
