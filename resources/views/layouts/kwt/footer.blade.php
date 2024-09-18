@@ -38,7 +38,7 @@
               <strong>Telepon:</strong>(+62) 821-7278-5770<br>
               <strong>Email:</strong>udiklat.padang@gmail.com<br>
             </p>
-             
+
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
@@ -55,12 +55,25 @@
     </div>
 
     <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>PLN UPDL Padang</span></strong>
-      </div>
-     
-    </div>
-  </footer>
-  <!-- End Footer -->
+  <div class="copyright">
+    &copy; Copyright <strong><span>PLN UPDL Padang</span></strong>
+  </div>
+  <div class="version">
+    <p>Version 1.0.0</p>
+  </div>
+</div>
+</footer>
+<!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<style>
+  .version {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    color: #666;
+    font-size: 12px;
+    z-index: 1000;
+  }
+</style>

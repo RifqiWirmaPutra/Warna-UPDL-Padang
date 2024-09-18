@@ -121,7 +121,7 @@
                                     <a href="{{ route('Adh.index') }}">Daftar Hadir Peserta</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="{{route('soon.index')}}">Informasi Penginapan (COMING SOON)</a>
+                                    <a href="{{route('penginapan.index')}}">Informasi Penginapan (COMING SOON)</a>
                                 </li>
                             </ul>
                         </li>
@@ -145,7 +145,7 @@
                             <ul class="submenu ">
                             <li class="submenu-item ">
                                     <a href="{{ route('contactadmin.index') }}">Contact</a>
-                                </li> 
+                                </li>
 
                                 <li class="submenu-item">
                                     <a href="{{ route('kelas.index') }}">Kelas</a>
@@ -161,18 +161,13 @@
 
                                 <li class="submenu-item ">
                                     <a href="{{ route('informasiadmin.admin') }}">Informasi</a>
-                                </li> 
-
-                                <li class="submenu-item ">
-                                    <a href="{{ route('feedbackadmin.index') }}">Layanan Testimoni</a>
                                 </li>
-                                
                             </ul>
                         </li>
                         @endif
                         <li class="sidebar-item">
                             <a href="{{ route('feedbackadmin.index') }}"  class='sidebar-link'>
-                                <i class="bi bi-server"></i>
+                                <i class="bi bi-headset"></i>
                                 <span class="small"> Layanan Testimoni</span>
                             </a>
                         </li>
@@ -184,16 +179,53 @@
                                 <span class="small">Pengajuan Kehadiran</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a href="{{route('soon.index')}}" class='sidebar-link'>
-                                <!-- <i class="bi bi-building"></i> -->
-                                <i class="bi bi-door-open-fill"></i>
-                                <span class="small">Check-in Penginapan</span>
+                        @endif
+                        @if($userRole === Admin::ROLE_SUPERADMIN)
+                        <li class="sidebar-item has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <!-- <i class="bi bi-collection-fill"></i> -->
+                                <i class="bi bi-telephone-plus-fill"></i>
+                                <span class="small">Jasa Dan Layanan</span>
                             </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item">
+                                    <a href="{{ route('admin.penginapan.index') }}">Informasi Penginapan</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="{{ route('admin.ruangan.index') }}">Ruangan</a>
+                                </li>
+
+                                <li class="submenu-item">
+                                    <a href="{{ route('admin.peralatan.index') }}">Peralatan</a>
+                                </li>
+
+                                <li class="submenu-item ">
+                                    <a href="{{ route('wisma.index') }}">Pembelajaran</a>
+                                </li>
+                            </ul>
                         </li>
                         @endif
-                        
-                        <!-- @if($userRole === Admin::ROLE_SUPERADMIN)
+                        @if($userRole === Admin::ROLE_SUPERADMIN)
+                        <li class="sidebar-item has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                {{-- <i class="bi bi-clipboard-check-fill"></i> --}}
+                                <span class="small">Booking</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item ">
+                                    <a href="{{route('admin.bookings.index')}}">Penginapan</a>
+                                </li>.
+                                {{-- <li class="submenu-item ">
+                                    <a href="{{ route('admin.bookingRuangan.index') }}">Ruangan</a>
+                                </li> --}}
+                            </ul>
+                        </li>
+                        @endif
+                        <li class="sidebar-item">
+                        </li>
+
+                        {{-- <!-- @if($userRole === Admin::ROLE_SUPERADMIN)
                         <li class="sidebar-item">
                             <a href="{{ route('sarana.admin') }}" class='sidebar-link'>
                                 <i class="bi bi-hexagon-fill"></i>
@@ -201,7 +233,7 @@
                             </a>
 
                         </li>
-                        @endif -->
+                        @endif --> --}}
 
                         @if(in_array($userRole, [Admin::ROLE_SUPERADMIN, Admin::ROLE_AdminJar]))
                         <li class="sidebar-item">
@@ -213,8 +245,12 @@
                             </a>
                         </li>
                         @endif
+
+
                         @if($userRole === Admin::ROLE_SUPERADMIN)
                         <li class="sidebar-item">
+
+
                             <a href="{{ route('accounts.create') }}" class='sidebar-link'>
                                 <i class="bi bi-person-plus-fill"></i>
                                 <span class="small">Create Admin</span>
@@ -237,10 +273,10 @@
                 @include('layouts.navigation_admin')
 
             </header>
-            
+
 
             <main class="py-4">
-            
+
                 @yield('content')
             </main>
 
@@ -249,7 +285,7 @@
                 <div class="copyright">
                     &copy; Copyright <strong><span>PLN UPDL Padang</span></strong>
                 </div>
-                    
+
                 </div>
             </footer>
         </div>
