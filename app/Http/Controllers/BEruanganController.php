@@ -67,7 +67,11 @@ class BEruanganController extends Controller
         $ruangan = Ruangan::findOrFail($id);
         $ruangan->update($request->all());
 
+<<<<<<< HEAD
         return redirect()->route('admin.ruangan.index')->with('success', 'Ruangan berhasil diperbarui!');
+=======
+        return redirect()->route('ruangan.index')->with('success', 'Ruangan berhasil diperbarui!');
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
     }
 
     // Menghapus data ruangan
@@ -76,6 +80,10 @@ class BEruanganController extends Controller
         $ruangan = Ruangan::findOrFail($id);
         $ruangan->delete();
 
+<<<<<<< HEAD
         return redirect()->route('admin.ruangan.index')->with('success', 'Ruangan berhasil dihapus!');
+=======
+        return redirect()->route('ruangan.index')->with('success', 'Ruangan berhasil dihapus!');
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
     }
 }

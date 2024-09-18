@@ -24,4 +24,8 @@ class PenginapanFactory extends Factory
             'keterangan' => $this->faker->sentence(),
         ];
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530

@@ -36,7 +36,11 @@ use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\BEpenginapanController;
 use App\Http\Controllers\BEruanganController;
 use App\Http\Controllers\BEperalatanController;
+<<<<<<< HEAD
 use App\Http\Controllers\BookingPeController;
+=======
+use App\Http\Controllers\BEbookingPeController;
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\InfoSarapanController;
 use App\Http\Controllers\ContactController;
@@ -44,7 +48,7 @@ use App\Http\Controllers\CheckInController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\ArsipUserController;
-
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\KulinerController;
 use App\Http\Controllers\KwtController;
 use App\Http\Controllers\DashboardKulinerController;
@@ -56,11 +60,19 @@ use App\Http\Controllers\Kwt\PolehController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FedbackAdminController;
 use App\Http\Controllers\DashboardBookingController;
+<<<<<<< HEAD
 
 
+=======
+use App\Http\Controllers\Jdl\PenginapanController;
+use App\Http\Controllers\PeBookingController;
+use App\Http\Controllers\PeBookingController as ControllersPeBookingController;
+use App\Http\Controllers\PenginapanDashboardController;
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Middleware\AdminMiddleware;
+use App\Models\Penginapan;
 
 // Rute-rute standar
 Route::get('/', function () {
@@ -167,6 +179,12 @@ Route::middleware(['auth:admin'])->group(function () {
         // Route::get('/{arpId}/edit/{persiapanId}', [PersiapanController::class, 'edit'])->name('persiapan.edit');
         Route::put('/persiapan/{arpId}/update/{persiapanId}', [PersiapanController::class, 'update'])->name('persiapan.update');
         Route::delete('/{arpId}/{kegiatanId}', [PersiapanController::class, 'destroy'])->name('persiapan.destroy');
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
     });
 
     // PELAKSANAAN
@@ -227,9 +245,18 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::delete('/informasi-admin/delete/{id}', [InformasiController::class, 'destroy'])->name('informasiadmin.destroy');
 
         // Menampilkan daftar penginapan
+<<<<<<< HEAD
         Route::prefix('admin')->name('admin.')->group(function () {
             Route::resource('penginapan', BEpenginapanController::class);
         });
+=======
+        Route::get('/penginapan', [BEpenginapanController::class, 'index'])->name('admin.penginapan.index');
+        Route::post('/penginapan/store', [BEpenginapanController::class, 'store'])->name('admin.penginapan.store');
+        Route::put('/penginapan/edit/{id}', [BEpenginapanController::class, 'edit'])->name('admin.penginapan.edit');
+        Route::delete('/penginapan/delete/{id}', [BEpenginapanController::class, 'destroy'])->name('admin.penginapan.destroy');
+        
+        
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
 
 
         //menampilkan daftar ruangan
@@ -237,7 +264,11 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::post('/ruangans', [BEruanganController::class, 'store'])->name('admin.ruangan.store');
         Route::put('/ruangans/{id}/edit', [BEruanganController::class, 'edit'])->name('admin.ruangan.edit');
         Route::delete('/ruangans/{id}', [BEruanganController::class, 'destroy'])->name('admin.ruangan.destroy');
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
         //menampilkan daftar ruangan
         Route::get('/peralatans', [BEperalatanController::class, 'index'])->name('admin.peralatan.index');
         Route::get('/peralatans/create', [BEperalatanController::class, 'create'])->name('admin.peralatan.create');
@@ -246,21 +277,38 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::put('/peralatans/{id}', [BEperalatanController::class, 'update'])->name('admin.peralatan.update');
         Route::delete('/peralatans/{id}', [BEperalatanController::class, 'destroy'])->name('admin.peralatan.destroy');
 
+<<<<<<< HEAD
         // Menampilkan daftar booking Penginapan
         Route::get('/admin/bookings', [BookingPeController::class, 'index'])->name('admin.bookings.index');
+=======
+        // Route::get('/bookingPe', [BEbookingPeController::class, 'index'])->name('admin.bookingPenginapan.index');
+        // Route::post('/bookingPe/store', [BEbookingPeController::class, 'store'])->name('admin.bookingPenginapan.store');
+        // Route::put('/bookingPe/edit/{id}', [BEbookingPeController::class, 'update'])->name('admin.bookingPenginapan.update');
+        // Route::delete('/bookingPe/delete/{id}', [BEbookingPeController::class, 'destroy'])->name('admin.bookingPenginapan.destroy');
+
+        
+        // Menampilkan daftar booking Penginapan
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
         // Route::get('/penginapan', [BEbookpenginapanController::class, 'index'])->name('admin.bookingPenginapan.index');
         // Route::post('/penginapan/store', [BEbookpenginapanController::class, 'store'])->name('admin.bookingPenginapan.store');
         // Route::put('/penginapan/edit/{id}', [BEbookpenginapanController::class, 'edit'])->name('admin.bookingPenginapan.edit');
         // Route::delete('/penginapan/delete/{id}', [BEbookpenginapanController::class, 'destroy'])->name('admin.bookingPenginapan.destroy');
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
         //Feedback Admin
         Route::get('/admin/feedback-admin/get-status/{id}', 'FedbackAdminController@getStatus');
     });
 
+<<<<<<< HEAD
     // Routes for user booking
     Route::get('layout/booking/create', [BookingPeController::class, 'create'])->name('layout.booking.create');
     Route::post('layout/booking', [BookingPeController::class, 'store'])->name('layout.booking.store');
 
+=======
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
     Route::get('/feedback-admin', [FedbackAdminController::class, 'index'])->name('feedbackadmin.index');
 
     //Check In di Dashboard
@@ -273,6 +321,14 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/contact', [ContactController::class, 'index'])->name('contactadmin.index');
     // Contoh route
     Route::get('/admin/contact/get-status/{id}', 'ContactController@getStatus');
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
 });
 
 require __DIR__ . '/adminauth.php';
@@ -313,6 +369,20 @@ Route::get('/kulinerwisatadantransportasi/index-kuliner', [KulinerController::cl
 
 // Kwt
 Route::get('/kulinerwisatadantransportasi', [KwtController::class, 'index'])->name('dashboardkuliner.index');
+
+// penginapan
+Route::get('/penginapan/padang', [PenginapanController::class, 'padang'])->name('penginapan.padang');
+Route::get('/penginapan/suralaya', [PenginapanController::class, 'suralaya'])->name('penginapan.suralaya');
+Route::get('/penginapan/jakarta', [PenginapanController::class, 'jakarta'])->name('penginapan.jakarta');
+Route::get('/penginapan/semarang', [PenginapanController::class, 'semarang'])->name('penginapan.semarang');
+Route::get('/penginapan/pandaan', [PenginapanController::class, 'pandaan'])->name('penginapan.pandaan');
+Route::get('/penginapan/bogor', [PenginapanController::class, 'bogor'])->name('penginapan.bogor');
+
+// booking
+Route::get('/booking/booking', [PeBookingController::class, 'booking'])->name('booking.penginapan');
+Route::get('/booking/create', [PeBookingController::class, 'create'])->name('booking.create');
+Route::post('/booking/store', [PeBookingController::class, 'store'])->name('booking.store');
+Route::get('/booking/success', [PeBookingController::class, 'success'])->name('booking.success');
 
 // wisata
 Route::get('/kulinerwisatadantransportasi/wisata', [WisataController::class, 'index'])->name('wisata');

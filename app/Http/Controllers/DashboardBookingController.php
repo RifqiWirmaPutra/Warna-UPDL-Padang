@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -7,6 +10,7 @@ use App\Models\BookingPe;
 
 class DashboardBookingController extends Controller
 {
+<<<<<<< HEAD
     public function index(){
         $bookings = BookingPe::all();
         return view('admin.booking.index', compact('bookings'));
@@ -17,6 +21,8 @@ class DashboardBookingController extends Controller
         return view('admin.booking.create');
     }
 
+=======
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -36,6 +42,7 @@ class DashboardBookingController extends Controller
             'uploadKTP' => $request->file('uploadKTP')->store('ktp_uploads'),
         ]);
 
+<<<<<<< HEAD
         return redirect()->route('booking.index')->with('success', 'Booking berhasil disimpan!');
     }
 
@@ -72,5 +79,8 @@ class DashboardBookingController extends Controller
         $booking = BookingPe::findOrFail($id);
         $booking->delete();
         return redirect()->route('booking.index')->with('success', 'Booking berhasil dihapus!');
+=======
+        return redirect()->back()->with('success', 'Booking berhasil disimpan!');
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
     }
 }

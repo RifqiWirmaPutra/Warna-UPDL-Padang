@@ -188,8 +188,13 @@
                                 <span class="small">Jasa Dan Layanan</span>
                             </a>
                             <ul class="submenu ">
+<<<<<<< HEAD
                                 <li class="submenu-item">
                                     <a href="{{ route('admin.penginapan.index') }}">Informasi Penginapan</a>
+=======
+                                <li class="submenu-item ">
+                                    <a href="{{route('admin.penginapan.index')}}">Penginapan</a>
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
                                 </li>
                                 <li class="submenu-item ">
                                     <a href="{{ route('admin.ruangan.index') }}">Ruangan</a>
@@ -208,13 +213,22 @@
                         @if($userRole === Admin::ROLE_SUPERADMIN)
                         <li class="sidebar-item has-sub">
                             <a href="#" class='sidebar-link'>
+<<<<<<< HEAD
                                 <i class="bi bi-collection-fill"></i>
                                 {{-- <i class="bi bi-clipboard-check-fill"></i> --}}
+=======
+                                <!-- <i class="bi bi-collection-fill"></i> -->
+                                <i class="bi bi-telephone-plus-fill"></i>
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
                                 <span class="small">Booking</span>
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item ">
+<<<<<<< HEAD
                                     <a href="{{route('admin.bookings.index')}}">Penginapan</a>
+=======
+                                    <a href="{{route('admin.bookingPenginapan.index')}}">Penginapan</a>
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
                                 </li>.
                                 {{-- <li class="submenu-item ">
                                     <a href="{{ route('admin.bookingRuangan.index') }}">Ruangan</a>

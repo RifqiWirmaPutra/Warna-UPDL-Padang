@@ -42,10 +42,16 @@
                                         <div class="form-group">
                                             <input type="number" placeholder="Masukkan Harga" class="form-control" name="harga" required>
                                         </div>
+<<<<<<< HEAD
                                         <label>Foto Ruangan: </label>
                                         <div class="form-group">
                                             {{-- <label for="uploadKTP">Upload KTP</label> --}}
                                             <input type="file" class="form-control-file" id="uploadKTP" name="uploadKTP" required>
+=======
+                                        <label>Foto: </label>
+                                        <div class="form-group">
+                                            <input type="text" placeholder="URL Foto" class="form-control" name="foto" required>
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
                                         </div>
                                         <label>Keterangan: </label>
                                         <div class="form-group">
@@ -69,8 +75,12 @@
                                         </div>
                                         <label>Upload KTP: </label>
                                         <div class="form-group">
+<<<<<<< HEAD
                                             {{-- <label for="uploadKTP">Upload KTP</label> --}}
                                             <input type="file" class="form-control-file" id="uploadKTP" name="uploadKTP" required>
+=======
+                                            <input type="text" placeholder="URL KTP" class="form-control" name="uploadKTP" required>
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -136,7 +146,11 @@
                                                 <i data-feather="x"></i>
                                             </button>
                                         </div>
+<<<<<<< HEAD
                                         <form action="{{ route('admin.ruangan.edit', $item->id) }}" method="POST" enctype="multipart/form-data">
+=======
+                                        <form action="{{ route('admin.ruangan.update', $item->id) }}" method="POST" enctype="multipart/form-data">
+>>>>>>> df8c089bbb22f01aebda973dff238feab8c40530
                                             @csrf
                                             @method('PUT')
                                             <div class="modal-body">
