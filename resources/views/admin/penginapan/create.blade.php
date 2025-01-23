@@ -49,11 +49,6 @@
                     <textarea name="fasilitas" class="form-control" required></textarea>
                 </div>
 
-                {{-- <div class="form-group">
-                    <label for="kapasitas">Kapasitas:</label>
-                    <textarea name="kapasitas" class="form-control" required></textarea>
-                </div> --}}
-
                 <div class="form-group">
                     <label for="fotoPenginapan">Foto Penginapan:</label>
                     <input type="file" name="fotoPenginapan[]" class="form-control" multiple>

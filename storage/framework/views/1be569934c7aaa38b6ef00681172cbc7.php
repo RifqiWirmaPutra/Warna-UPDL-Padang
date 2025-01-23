@@ -44,13 +44,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="keterangan">Keterangan:</label>
-                    <textarea name="keterangan" class="form-control" required></textarea>
+                    <label for="fasilitas">Fasilitas:</label>
+                    <textarea name="fasilitas" class="form-control" required></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="fotoPenginapan">Foto Penginapan:</label>
-                    <input type="file" name="fotoPenginapan" class="form-control" required>
+                    <input type="file" name="fotoPenginapan[]" class="form-control" multiple>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Tambah Penginapan</button>

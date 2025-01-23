@@ -26,7 +26,7 @@
                                     <th>Harga Monthly PLN</th>
                                     <th>Harga Daily Non PLN</th>
                                     <th>Harga Monthly Non PLN</th>
-                                    <th>Keterangan</th>
+                                    <th>Fasilitas</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -36,20 +36,22 @@
                                         <td class="text-center"><?php echo e($loop->iteration); ?></td>
                                         <td><?php echo e($item->tipePenginapan); ?></td>
                                         <td class="text-center">
-                                            <!-- Menampilkan foto penginapan dengan ukuran yang sesuai -->
                                             <?php if($item->fotoPenginapan): ?>
-                                                <img src="<?php echo e(asset('storage/assets/penginapan/' . $item->fotoPenginapan)); ?>"
-                                                    alt="Foto Penginapan"
-                                                    style="width: 150px; height: auto; object-fit: cover;">
+                                                <?php $__currentLoopData = $item->fotoPenginapan; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $foto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <img src="<?php echo e(asset('storage/storage/assets/penginapan/' . $foto)); ?>"
+                                                         alt="Foto Penginapan"
+                                                         style="width: 100px; height: auto; object-fit: cover; margin-right: 5px;">
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             <?php else: ?>
                                                 Tidak Ada Foto
                                             <?php endif; ?>
                                         </td>
+
                                         <td><?php echo e($item->hargadpln); ?></td>
                                         <td><?php echo e($item->hargampln); ?></td>
                                         <td><?php echo e($item->hargadnonpln); ?></td>
                                         <td><?php echo e($item->hargamnonpln); ?></td>
-                                        <td><?php echo e($item->keterangan); ?></td>
+                                        <td><?php echo e($item->fasilitas); ?></td>
                                         <td>
                                             <a href="<?php echo e(route('admin.penginapan.edit', $item->id)); ?>"
                                                 class="btn btn-warning">Edit</a>

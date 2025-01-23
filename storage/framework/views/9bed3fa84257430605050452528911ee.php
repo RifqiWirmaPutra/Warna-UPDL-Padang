@@ -228,6 +228,9 @@
                                 </a>
                                 <ul class="submenu ">
                                     <li class="submenu-item ">
+                                        <a href="<?php echo e(route('admin.jenisPenginapan.index')); ?>">Jenis Penginapan</a>
+                                    </li>
+                                    <li class="submenu-item ">
                                         <a href="<?php echo e(route('admin.bookings.index')); ?>">Penginapan</a>
                                     </li>
                                     <li class="submenu-item ">
